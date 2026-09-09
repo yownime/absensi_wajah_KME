@@ -2,7 +2,7 @@ import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { db } from "@/db";
 import { users, attendances } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 
 // Helper function to calculate Euclidean distance between two vectors (128-d arrays)
 function euclideanDistance(desc1: number[], desc2: number[]): number {
