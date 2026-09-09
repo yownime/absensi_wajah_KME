@@ -5,9 +5,10 @@ import RekapClient from "./RekapClient";
 
 export const dynamic = "force-dynamic";
 
-export default async function EmployeeRekapPage({ params }: { params: { clerkId: string } }) {
+export default async function EmployeeRekapPage({ params }: { params: Promise<{ clerkId: string }> }) {
+  const { clerkId } = await params;
   const client = await clerkClient();
-  const user = await client.users.getUser(params.clerkId);
+  const user = await client.users.getUser(clerkId);
   const name = `${user.firstName || ""} ${user.lastName || ""}`.trim() || user.emailAddresses[0]?.emailAddress || "Karyawan";
 
   return (
@@ -27,7 +28,7 @@ export default async function EmployeeRekapPage({ params }: { params: { clerkId:
         <p className="text-gray-500 mt-1 font-medium">Lihat rekap kehadiran bulanan</p>
       </div>
 
-      <RekapClient clerkId={params.clerkId} />
+      <RekapClient clerkId={clerkId} />
     </div>
   );
 }
