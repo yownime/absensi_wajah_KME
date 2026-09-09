@@ -7,7 +7,7 @@ import { eq } from "drizzle-orm";
 
 export async function DELETE(
   req: Request,
-  { params }: { params: { clerkId: string } }
+  { params }: { params: Promise<{ clerkId: string }> }
 ) {
   try {
     const isAdmin = await checkRole("admin");
@@ -15,7 +15,7 @@ export async function DELETE(
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const { clerkId } = params;
+    const { clerkId } = await params;
 
     // 1. Delete user from Clerk to revoke login access
     const client = await clerkClient();
