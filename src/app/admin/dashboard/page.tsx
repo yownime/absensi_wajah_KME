@@ -5,6 +5,7 @@ import { eq } from "drizzle-orm";
 import { UserCheck, UserX, Users, Activity, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import DeleteUserButton from "@/components/DeleteUserButton";
 
 export const dynamic = "force-dynamic";
 
@@ -165,16 +166,19 @@ export default async function AdminDashboard() {
                       )}
                     </td>
                     <td className="px-8 py-5 text-right">
-                      {!op.isEnrolled ? (
-                        <Link 
-                          href="/admin/enrollment"
-                          className="inline-flex items-center gap-1 text-sm font-bold text-agency-dark hover:text-agency-lime transition-colors border border-gray-200 hover:border-agency-lime hover:bg-agency-dark px-4 py-2 rounded-xl"
-                        >
-                          Daftarkan <ChevronRight className="w-4 h-4" />
-                        </Link>
-                      ) : (
-                        <span className="text-sm font-bold text-gray-300">-</span>
-                      )}
+                      <div className="flex items-center justify-end gap-2">
+                        {!op.isEnrolled ? (
+                          <Link 
+                            href="/admin/enrollment"
+                            className="inline-flex items-center gap-1 text-sm font-bold text-agency-dark hover:text-agency-lime transition-colors border border-gray-200 hover:border-agency-lime hover:bg-agency-dark px-4 py-2 rounded-xl"
+                          >
+                            Daftarkan <ChevronRight className="w-4 h-4" />
+                          </Link>
+                        ) : (
+                          <span className="text-sm font-bold text-gray-300">-</span>
+                        )}
+                        <DeleteUserButton clerkId={op.id} userName={op.name} />
+                      </div>
                     </td>
                   </tr>
                 ))
