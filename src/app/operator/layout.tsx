@@ -23,8 +23,8 @@ export default async function OperatorLayout({
         <div className="absolute top-0 right-0 w-32 h-32 bg-agency-lime/5 rounded-full blur-3xl pointer-events-none" />
         
         <div className="mb-10 relative z-10 px-2 pt-2">
-          <div className="font-extrabold text-2xl tracking-tight text-white flex items-center gap-2">
-            NEXUS<span className="text-agency-lime">OPS</span>
+          <div className="flex items-center gap-2">
+            <img src="/logo.png" alt="KME Attendance Logo" className="h-14 bg-white p-2 rounded-xl" />
           </div>
           <div className="text-[10px] font-bold text-gray-400 mt-2 uppercase tracking-widest bg-white/5 inline-block px-2 py-1 rounded">
             Divisi {division}

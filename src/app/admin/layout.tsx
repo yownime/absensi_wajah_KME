@@ -1,7 +1,7 @@
 import { checkRole } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { UserPlus, LayoutDashboard, LogOut } from "lucide-react";
+import { UserPlus, LayoutDashboard, LogOut, ClipboardList } from "lucide-react";
 import { SignOutButton } from "@clerk/nextjs";
 
 export default async function AdminLayout({
@@ -20,8 +20,8 @@ export default async function AdminLayout({
         {/* Subtle decorative glow */}
         <div className="absolute top-0 left-0 w-32 h-32 bg-agency-lime/5 rounded-full blur-3xl pointer-events-none" />
         
-        <div className="font-extrabold text-2xl mb-10 tracking-tight text-white flex items-center gap-2 relative z-10 px-2 pt-2">
-          NEXUS<span className="text-agency-lime">ADMIN</span>
+        <div className="mb-10 relative z-10 px-2 pt-2">
+          <img src="/logo.png" alt="KME Attendance Logo" className="h-14 bg-white p-2 rounded-xl" />
         </div>
         <nav className="flex-1 space-y-2 relative z-10">
           <Link
@@ -37,6 +37,13 @@ export default async function AdminLayout({
           >
             <UserPlus className="w-5 h-5 group-hover:scale-110 transition-transform" />
             Face Enrollment
+          </Link>
+          <Link
+            href="/admin/rekap-absensi"
+            className="flex items-center gap-3 px-4 py-3.5 rounded-2xl hover:bg-agency-lime hover:text-agency-dark text-gray-300 transition-all font-semibold group"
+          >
+            <ClipboardList className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            Rekap Absensi
           </Link>
         </nav>
         <div className="mt-auto relative z-10 pt-4 border-t border-white/10">

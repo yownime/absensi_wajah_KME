@@ -20,8 +20,8 @@ export default async function ManagementLayout({
         {/* Subtle decorative glow */}
         <div className="absolute bottom-0 right-0 w-32 h-32 bg-agency-lime/5 rounded-full blur-3xl pointer-events-none" />
         
-        <div className="font-extrabold text-2xl mb-10 tracking-tight text-white flex items-center gap-2 relative z-10 px-2 pt-2">
-          NEXUS<span className="text-agency-lime">MGT</span>
+        <div className="mb-10 relative z-10 px-2 pt-2">
+          <img src="/logo.png" alt="KME Attendance Logo" className="h-14 bg-white p-2 rounded-xl" />
         </div>
         <nav className="flex-1 space-y-2 relative z-10">
           <Link

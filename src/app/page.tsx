@@ -11,14 +11,14 @@ export default async function Home() {
   if (!userId) {
     // If not logged in, show a premium agency-style landing page
     return (
-      <main className="min-h-screen bg-agency-cream font-sans selection:bg-agency-lime selection:text-agency-dark">
+      <main className="min-h-screen overflow-x-hidden bg-agency-cream font-sans selection:bg-agency-lime selection:text-agency-dark">
         {/* HERO SECTION - Dark Green */}
         <div id="beranda" className="bg-agency-dark rounded-b-[3rem] md:rounded-b-[5rem] pb-24 pt-8 px-6 relative overflow-hidden">
           {/* Background Image with Overlay */}
           <img 
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" 
-            alt="Industrial Facility" 
-            className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" 
+            src="/hero-bg.jpeg" 
+            alt="PT Karya Mandoge Energi Facility" 
+            className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay" 
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-agency-dark/80 to-agency-dark" />
 
@@ -28,11 +28,8 @@ export default async function Home() {
           
           {/* Navigation */}
           <nav className="max-w-7xl mx-auto flex items-center justify-between mb-20 relative z-10">
-            <div className="flex items-center gap-2 text-white font-bold text-xl tracking-tight">
-              <div className="w-8 h-8 bg-agency-lime rounded-lg flex items-center justify-center text-agency-dark">
-                <Activity className="w-5 h-5" />
-              </div>
-              NEXUS<span className="text-agency-lime">OPS</span>
+            <div className="flex items-center gap-2">
+              <img src="/logo.png" alt="KME Attendance Logo" className="h-12 bg-white p-1.5 rounded-xl" />
             </div>
             
             <div className="hidden md:flex items-center gap-8 text-gray-300 text-sm font-bold uppercase tracking-wider">
@@ -219,7 +216,7 @@ export default async function Home() {
         </div>
 
         {/* CONTACT & MAP SECTION */}
-        <div id="kontak" className="w-full bg-white py-24 border-t border-gray-100 relative">
+        <div id="kontak" className="w-full bg-white py-24 border-t border-gray-100 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 blur-[100px] pointer-events-none rounded-full translate-x-1/3 -translate-y-1/2" />
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -235,7 +232,7 @@ export default async function Home() {
               <div className="bg-agency-cream rounded-[2rem] p-10 flex flex-col justify-center border border-gray-100 shadow-xl space-y-10">
                 <div className="space-y-4">
                   <h3 className="text-3xl font-extrabold text-agency-dark tracking-tight">Mari Berbincang</h3>
-                  <p className="text-gray-500 text-lg">Hubungi kami untuk informasi lebih lanjut mengenai sistem operasional NexusOps.</p>
+                  <p className="text-gray-500 text-lg">Hubungi kami untuk informasi lebih lanjut mengenai sistem operasional PT Karya Mandoge Energi.</p>
                 </div>
                 
                 <div className="space-y-8">
@@ -245,7 +242,7 @@ export default async function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-agency-dark text-lg mb-1">Alamat Kantor</h4>
-                      <p className="text-gray-600">Gedung Nexus Tower Lt. 12<br/>Jl. Sudirman Kav. 50, Jakarta Pusat 10220</p>
+                      <p className="text-gray-600">Komplek Multatuli Indah<br/>Jl. Multatuli AA No. 50, Medan Maimun, Kota Medan, Sumatera Utara</p>
                     </div>
                   </div>
                   
@@ -265,7 +262,7 @@ export default async function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-agency-dark text-lg mb-1">Email</h4>
-                      <p className="text-gray-600">support@nexusops.co.id<br/>info@nexusops.co.id</p>
+                      <p className="text-gray-600">admin@karyamandogeenergi.com</p>
                     </div>
                   </div>
                 </div>
@@ -275,7 +272,7 @@ export default async function Home() {
               <div className="rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 bg-gray-50 h-[500px] lg:h-auto min-h-[400px]">
                 {/* Note: Update the src below with the actual company's Google Map embed URL */}
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126907.03920950666!2d106.7431872856006!3d-6.229728035133271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1709230000000!5m2!1sid!2sid" 
+                  src="https://maps.google.com/maps?q=Komplek+Multatuli+Indah,+Jl.+Multatuli+AA+No.+50,+Medan+Maimun,+Kota+Medan,+Sumatera+Utara&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -295,11 +292,8 @@ export default async function Home() {
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
               <div className="col-span-1 md:col-span-2 space-y-6">
-                <div className="flex items-center gap-2 text-white font-bold text-2xl tracking-tight">
-                  <div className="w-10 h-10 bg-agency-lime rounded-xl flex items-center justify-center text-agency-dark shadow-[0_0_15px_rgba(190,242,100,0.3)]">
-                    <Activity className="w-6 h-6" />
-                  </div>
-                  NEXUS<span className="text-agency-lime">OPS</span>
+                <div className="flex items-center gap-2">
+                  <img src="/logo.png" alt="KME Attendance Logo" className="h-16 bg-white p-2 rounded-xl" />
                 </div>
                 <p className="text-gray-400 max-w-sm leading-relaxed text-sm">
                   Sistem operasional terpadu yang memberdayakan industri dengan presensi biometrik anti-curang dan pencatatan mesin yang presisi.
@@ -328,7 +322,7 @@ export default async function Home() {
             
             <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-gray-500 text-sm">
-                &copy; {new Date().getFullYear()} NexusOps. Hak Cipta Dilindungi Undang-Undang.
+                &copy; {new Date().getFullYear()} PT Karya Mandoge Energi. Hak Cipta Dilindungi Undang-Undang.
               </p>
               <div className="flex gap-2">
                 {/* Social placeholders */}

@@ -9,19 +9,16 @@ export default function Page() {
       <div className="hidden lg:flex flex-1 relative bg-agency-dark overflow-hidden flex-col justify-between p-12 lg:p-16">
         {/* Background Image with Overlay */}
         <img 
-          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" 
-          alt="Industrial Facility" 
-          className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay" 
+          src="/hero-bg.jpeg" 
+          alt="PT Karya Mandoge Energi Facility" 
+          className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" 
         />
         {/* Gradient mask to make text readable */}
         <div className="absolute inset-0 bg-gradient-to-t from-agency-dark via-agency-dark/60 to-transparent" />
         
         {/* Logo Top Left */}
-        <div className="relative z-10 flex items-center gap-2 text-white font-bold text-2xl tracking-tight">
-          <div className="w-10 h-10 bg-agency-lime rounded-xl flex items-center justify-center text-agency-dark shadow-[0_0_15px_rgba(190,242,100,0.3)]">
-            <Activity className="w-6 h-6" />
-          </div>
-          NEXUS<span className="text-agency-lime">OPS</span>
+        <div className="relative z-10 flex items-center gap-2">
+          <img src="/logo.png" alt="KME Attendance Logo" className="h-16 bg-white p-2 rounded-xl" />
         </div>
 
         {/* Hero Text Bottom Left */}
@@ -55,11 +52,8 @@ export default function Page() {
         
         <div className="w-full max-w-[400px] relative z-10">
           {/* Mobile Logo (Only visible on small screens) */}
-          <div className="lg:hidden flex justify-center items-center gap-2 text-agency-dark font-bold text-3xl tracking-tight mb-10">
-            <div className="w-12 h-12 bg-agency-lime rounded-xl flex items-center justify-center text-agency-dark shadow-[0_0_15px_rgba(190,242,100,0.3)]">
-              <Activity className="w-7 h-7" />
-            </div>
-            NEXUS<span className="text-agency-lime">OPS</span>
+          <div className="lg:hidden flex justify-center items-center gap-2 mb-10">
+            <img src="/logo.png" alt="KME Attendance Logo" className="h-16 bg-white p-2 rounded-xl" />
           </div>
 
           <div className="w-full flex justify-center shadow-2xl rounded-[2rem] bg-white border border-gray-100 p-2">

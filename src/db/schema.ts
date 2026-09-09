@@ -14,7 +14,10 @@ export const attendances = sqliteTable("attendances", {
   id: text("id").primaryKey(),
   userId: text("user_id").notNull().references(() => users.id),
   checkIn: integer("check_in", { mode: 'timestamp' }).notNull(),
+  checkOut: integer("check_out", { mode: 'timestamp' }),
   shift: text("shift").notNull(), // 'Pagi' | 'Sore' | 'Malam'
+  type: text("type").default("presence"), // 'presence' | 'leave' | 'sick' | 'alpha'
+  lateMinutes: integer("late_minutes").default(0),
   similarityScore: real("similarity_score"),
   status: text("status").notNull(), // 'success' | 'failed'
 });
